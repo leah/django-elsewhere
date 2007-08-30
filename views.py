@@ -27,11 +27,11 @@ def social_networks(request):
             form_name = new_data['form_name']
             delete_id = new_data['delete_id']
             if form_name == 'delete_sn_form':
-                profile = SocialNetworkProfile.objects.get(id=delete_id)
+                profile = u.social_network_profiles.get(id=delete_id)
             if form_name == 'delete_im_form':
-                profile = InstantMessengerProfile.objects.get(id=delete_id)
+                profile = u.instant_messenger_profiles.get(id=delete_id)
             if form_name == 'delete_w_form':
-                profile = WebsiteProfile.objects.get(id=delete_id)
+                profile = u.website_profiles.get(id=delete_id)
             profile.delete()
         except:
             pass
