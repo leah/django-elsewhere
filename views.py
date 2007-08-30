@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 
 from django_psn.elsewhere import PortableProfile
+from django_psn.models import *
 from django_psn.forms import *
 
 # portable social networks
@@ -18,6 +19,22 @@ def social_networks(request):
         u = User.objects.get(id=u_id)
     except:
         raise Http404
+    
+    if request.method == 'POST':
+        # delete a profile
+        new_data = request.POST.copy()
+        try:
+            form_name = new_data['form_name']
+            delete_id = new_data['delete_id']
+            if form_name == 'delete_sn_form':
+                profile = SocialNetworkProfile.objects.get(id=delete_id)
+            if form_name == 'delete_im_form':
+                profile = InstantMessengerProfile.objects.get(id=delete_id)
+            if form_name == 'delete_w_form':
+                profile = WebsiteProfile.objects.get(id=delete_id)
+            profile.delete()
+        except:
+            pass
 
     return render_to_response('psn.html', {
         'social_network_profiles': u.social_network_profiles.all(),
