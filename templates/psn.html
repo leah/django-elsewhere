@@ -1,0 +1,48 @@
+{% load psn_extras %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Social Network Settings</title>
+</head>
+<body>
+<h1>My Social Networks</h1>
+
+View Social Networks : <a href="/settings/social_networks">Add Social Networks</a>
+
+{% if social_network_profiles %}
+<h3>My Social Networks</h3>
+<ul>
+    {% for sn in social_network_profiles %}
+        <li>
+            <a href="{{ sn.network_id|profile_url:sn.username }}" rel="me">{{ sn.network_id|network_name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if instant_messenger_profiles %}
+<h3>My Instant Messengers</h3>
+<ul>
+    {% for im in instant_messenger_profiles %}
+        <li>
+            {{ im.messenger_id|messenger_name }}: {{ im.username }}
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if website_profiles %}
+<h3>My Websites</h3>
+<ul>
+    {% for w in website_profiles %}
+        <li>
+            <a href="{{ w.url }}" rel="me">{{ w.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</body>
