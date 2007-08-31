@@ -86,6 +86,16 @@ MESSENGER_IDS = (
     ('jabber', 'Jabber'),
 )
 
+MESSENGER_NAMES = (
+    ('aim', 'AIM'),
+    ('msn', 'MSN'),
+    ('yahoo', 'Y!'),
+    ('gtalk', 'GTalk'),
+    ('icq', 'ICQ'),
+    ('skype', 'Skype'),
+    ('jabber', 'Jabber'),
+)
+
 # get the display name for a social network
 def get_network_name(network_id):
     for k,v in NETWORK_IDS:
@@ -103,7 +113,7 @@ def get_profile_url(network_id, username):
 
 # get the display name for an IM service
 def get_messenger_name(messenger_id):
-    for k, v in MESSENGER_IDS:
+    for k, v in MESSENGER_NAMES:
         if k == messenger_id:
             return v
     else:
