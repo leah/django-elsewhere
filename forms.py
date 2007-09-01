@@ -9,7 +9,7 @@ import re
 class SocialNetworkSettingsForm(forms.Form):
     form_name = forms.CharField(widget=forms.HiddenInput(), initial='sn_form')
     network_id = forms.ChoiceField(choices=NETWORK_IDS)
-    username = forms.CharField(max_length=128)
+    username = forms.CharField(max_length=32)
     
     def __init__(self, user, *args, **kwargs):
         try:
@@ -26,7 +26,7 @@ class SocialNetworkSettingsForm(forms.Form):
 class InstantMessengerSettingsForm(forms.Form):
     form_name = forms.CharField(widget=forms.HiddenInput(), initial='im_form')
     messenger_id = forms.ChoiceField(choices=MESSENGER_IDS)
-    username = forms.CharField(max_length=128)
+    username = forms.CharField(max_length=32)
     
     def __init__(self, user, *args, **kwargs):
         try:
@@ -42,7 +42,7 @@ class InstantMessengerSettingsForm(forms.Form):
         
 class WebsiteSettingsForm(forms.Form):
     form_name = forms.CharField(widget=forms.HiddenInput(), initial='w_form')
-    name = forms.CharField(max_length=128)
+    name = forms.CharField(max_length=32)
     url = forms.URLField(max_length=250, initial='http://')
     
     def __init__(self, user, *args, **kwargs):
