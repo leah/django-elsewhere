@@ -1,5 +1,4 @@
 from django.utils import simplejson
-from django_psn.util import get_profile_url
 
 '''
     PortableProfile
@@ -38,7 +37,7 @@ class PortableProfile(object):
         # http://facebook.com/profile?id=23423434
         for sn in self.user.social_network_profiles.all():
             if not sn.is_verified:
-                claimed_urls.append(get_profile_url(sn.network_id, sn.username))
+                claimed_urls.append(sn.profile_url)
         # aim:bradfitzpatrick
         for im in self.user.instant_messenger_profiles.all():
             if not im.is_verified:
@@ -58,7 +57,7 @@ class PortableProfile(object):
         # http://facebook.com/profile?id=23423434
         for sn in self.user.social_network_profiles.all():
             if sn.is_verified:
-                verified_urls.append(get_profile_url(sn.network_id, sn.username))
+                verified_urls.append(sn.profile_url)
         # aim:bradfitzpatrick
         for im in self.user.instant_messenger_profiles.all():
             if im.is_verified:
