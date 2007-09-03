@@ -1,5 +1,4 @@
 from django import newforms as forms
-from django.core import validators
 from django.http import Http404
 
 from django_psn.models import *
@@ -16,13 +15,6 @@ class SocialNetworkSettingsForm(forms.Form):
         except:
             raise Http404
         super(SocialNetworkSettingsForm, self).__init__(*args, **kwargs)
-    
-    def clean_username(self):
-        try:
-            validators.isAlphaNumeric(self.data['username'], self.data)
-        except:
-            raise forms.ValidationError('Username / User ID may only contain letters, numbers, and underscores.')
-        return self.data['username']
         
     def save(self, new_data):
         profile = SocialNetworkProfile(user=self.user, network_id=new_data['network_id'], username=new_data['username'])
@@ -40,13 +32,6 @@ class InstantMessengerSettingsForm(forms.Form):
         except:
             raise Http404
         super(InstantMessengerSettingsForm, self).__init__(*args, **kwargs)
-    
-    def clean_username(self):
-        try:
-            validators.isAlphaNumeric(self.data['username'], self.data)
-        except:
-            raise forms.ValidationError('Username may only contain letters, numbers, and underscores.')
-        return self.data['username']
         
     def save(self, new_data):
         profile = InstantMessengerProfile(user=self.user, messenger_id=new_data['messenger_id'], username=new_data['username'])
