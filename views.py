@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 
-from django_psn.elsewhere import PortableProfile
-from django_psn.models import *
-from django_psn.forms import *
+from psn.elsewhere import PortableProfile
+from psn.models import *
+from psn.forms import *
 
 # portable social networks
 @login_required

@@ -1,8 +1,8 @@
 from django import newforms as forms
 from django.http import Http404
 
-from django_psn.models import *
-from django_psn.util import NETWORK_IDS, MESSENGER_IDS
+from psn.models import *
+from psn.util import NETWORK_IDS, MESSENGER_IDS
 
 class SocialNetworkSettingsForm(forms.Form):
     form_name = forms.CharField(widget=forms.HiddenInput(), initial='sn_form')
