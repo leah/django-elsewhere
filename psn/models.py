@@ -12,7 +12,7 @@ class SocialNetworkProfile(models.Model):
     date_verified = models.DateTimeField(_('date verified'), default=datetime.now)
     is_verified = models.BooleanField(default=False)
     
-    def __str__(self):
+    def __unicode__(self):
         return self.network_id
         
     # get the display name for a social network
@@ -22,7 +22,7 @@ class SocialNetworkProfile(models.Model):
                 return v
         else:
             return None
-    network_name = property(_get_network_name)
+    profile_name = property(_get_network_name)
 
     # get the url for a social network with the username/id inserted
     def _get_profile_url(self):
@@ -43,7 +43,7 @@ class InstantMessengerProfile(models.Model):
     date_verified = models.DateTimeField(_('date verified'), default=datetime.now)
     is_verified = models.BooleanField(default=False)
     
-    def __str__(self):
+    def __unicode__(self):
         return self.username
     
     # get the long name for an IM service
@@ -61,7 +61,7 @@ class InstantMessengerProfile(models.Model):
             return MESSENGER_NAMES[self.messenger_id]
         except:
             return None
-    messenger_name = property(_get_messenger_name)
+    profile_name = property(_get_messenger_name)
 
     # get the url to start a chat with the username/id provided
     def _get_messenger_url(self):
@@ -82,8 +82,13 @@ class WebsiteProfile(models.Model):
     date_verified = models.DateTimeField(_('date verified'), default=datetime.now)
     is_verified = models.BooleanField(default=False)
     
-    def __str__(self):
+    def __unicode__(self):
         return self.url
+
+    # get the display name for a website
+    def _get_website_name(self):
+        return self.name
+    profile_name = property(_get_website_name)
     
     class Admin:
         pass

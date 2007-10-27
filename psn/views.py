@@ -12,7 +12,7 @@ from psn.forms import *
 # portable social networks
 @login_required
 def social_networks(request):
-    
+    statusmsg = ""
     # get the logged-in user from the session
     u_id = request.session.get(SESSION_KEY)
     try:
@@ -32,6 +32,7 @@ def social_networks(request):
                 profile = u.instant_messenger_profiles.get(id=delete_id)
             if form_name == 'delete_w_form':
                 profile = u.website_profiles.get(id=delete_id)
+            statusmsg = u"%s Deleted!" % profile.profile_name
             profile.delete()
         except:
             pass
@@ -40,6 +41,7 @@ def social_networks(request):
         'social_network_profiles': u.social_network_profiles.all(),
         'instant_messenger_profiles': u.instant_messenger_profiles.all(),
         'website_profiles': u.website_profiles.all(),
+        'statusmsg': statusmsg,
     }, context_instance=RequestContext(request))
 
 # portable social networks settings page

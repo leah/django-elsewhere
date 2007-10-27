@@ -10,12 +10,16 @@
 
 View Social Networks : <a href="/settings/social_networks">Add Social Networks</a>
 
+{% if statusmsg %}
+    <div class="form-error">{{ statusmsg }}</div>
+{% endif %}
+
 {% if social_network_profiles %}
 <h3>My Social Networks</h3>
 <ul>
     {% for sn in social_network_profiles %}
         <li>
-            <a href="{{ sn.profile_url|escape }}" rel="me">{{ sn.network_name|escape }}</a>
+            <a href="{{ sn.profile_url|escape }}" rel="me">{{ sn.profile_name|escape }}</a>
             <form id="delete-network-{{ sn.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_sn_form"/>
                 <input type="submit" value="Delete" class="button" />
@@ -31,7 +35,7 @@ View Social Networks : <a href="/settings/social_networks">Add Social Networks</
 <ul>
     {% for im in instant_messenger_profiles %}
         <li>
-            {% if im.messenger_url %}<a href="{{ im.messenger_url|escape }}">{% endif %}{{ im.messenger_name }}: {{ im.username|escape }}{% if im.messenger_url %}</a>{% endif %}
+            {% if im.messenger_url %}<a href="{{ im.messenger_url|escape }}">{% endif %}{{ im.profile_name }}: {{ im.username|escape }}{% if im.messenger_url %}</a>{% endif %}
             <form id="delete-messenger-{{ im.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_im_form"/>
                 <input type="submit" value="Delete" class="button" />
