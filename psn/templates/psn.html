@@ -31,7 +31,7 @@ View Social Networks : <a href="/settings/social_networks">Add Social Networks</
 <ul>
     {% for im in instant_messenger_profiles %}
         <li>
-            {{ im.messenger_name }}: {{ im.username|escape }}
+            {% if im.messenger_url %}<a href="{{ im.messenger_url|escape }}">{% endif %}{{ im.messenger_name }}: {{ im.username|escape }}{% if im.messenger_url %}</a>{% endif %}
             <form id="delete-messenger-{{ im.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_im_form"/>
                 <input type="submit" value="Delete" class="button" />

@@ -86,6 +86,15 @@ MESSENGER_IDS = (
     ('jabber', 'Jabber'),
 )
 
+MESSENGER_URLS = {
+    'aim':'aim:goim?screenname=%s',
+    'msn':'msnim:chat?contact=%s',
+    'yahoo':'ymsgr:sendim?%s',
+    'gtalk':'gtalk:chat?jid=%s',
+    'icq':'http://www.icq.com/people/about_me.php?to=%s',
+    'skype':'skype:%s?chat',
+}
+
 MESSENGER_NAMES = {
     'aim': 'AIM',
     'msn': 'MSN',

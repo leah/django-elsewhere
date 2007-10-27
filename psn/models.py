@@ -62,7 +62,15 @@ class InstantMessengerProfile(models.Model):
         except:
             return None
     messenger_name = property(_get_messenger_name)
-    
+
+    # get the url to start a chat with the username/id provided
+    def _get_messenger_url(self):
+        try:
+            return MESSENGER_URLS[self.messenger_id] % str(self.username)
+        except:
+            return None
+    messenger_url = property(_get_messenger_url)
+
     class Admin:
         pass
         
