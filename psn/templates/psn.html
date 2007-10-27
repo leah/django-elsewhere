@@ -34,7 +34,7 @@ View Social Networks : <a href="/settings/social_networks">Add Social Networks</
             {{ im.messenger_name }}: {{ im.username|escape }}
             <form id="delete-messenger-{{ im.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_im_form"/>
-                <input type="submit" value="Delete"" class="button" />
+                <input type="submit" value="Delete" class="button" />
                 <input type="hidden" name="delete_id" value="{{ im.id }}"/>
             </form>
         </li>
