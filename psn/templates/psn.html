@@ -18,7 +18,7 @@ View Social Networks : <a href="/settings/social_networks">Add Social Networks</
             <a href="{{ sn.profile_url|escape }}" rel="me">{{ sn.network_name|escape }}</a>
             <form id="delete-network-{{ sn.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_sn_form"/>
-                <input type="submit" value="Delete"" class="button" />
+                <input type="submit" value="Delete" class="button" />
                 <input type="hidden" name="delete_id" value="{{ sn.id }}"/>
             </form>
         </li>
@@ -50,7 +50,7 @@ View Social Networks : <a href="/settings/social_networks">Add Social Networks</
             <a href="{{ w.url|escape }}" rel="me">{{ w.name|escape }}</a>
             <form id="delete-website-{{ w.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_w_form"/>
-                <input type="submit" value="Delete"" class="button" />
+                <input type="submit" value="Delete" class="button" />
                 <input type="hidden" name="delete_id" value="{{ w.id }}"/>
             </form>
         </li>
