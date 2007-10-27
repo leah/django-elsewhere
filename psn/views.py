@@ -1,6 +1,5 @@
 from django.http import HttpResponse, HttpResponseServerError, Http404
 from django.template import RequestContext
-from django.contrib.auth import SESSION_KEY
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
@@ -13,12 +12,8 @@ from psn.forms import *
 @login_required
 def social_networks(request):
     statusmsg = ""
-    # get the logged-in user from the session
-    u_id = request.session.get(SESSION_KEY)
-    try:
-        u = User.objects.get(id=u_id)
-    except:
-        raise Http404
+    
+    u = request.user
     
     if request.method == 'POST':
         # delete a profile
@@ -50,12 +45,7 @@ def settings_social_networks(request):
     errormsg = statusmsg = ""
     new_data = {}
     
-    # get the logged-in user from the session
-    u_id = request.session.get(SESSION_KEY)
-    try:
-        u = User.objects.get(id=u_id)
-    except:
-        raise Http404
+    u = request.user
     
     # create blank forms
     sn_form = SocialNetworkSettingsForm(u)
