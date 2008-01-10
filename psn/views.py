@@ -41,41 +41,44 @@ def social_networks(request):
 
 # portable social networks settings page
 @login_required
-def settings_social_networks(request):
+def settings_social_networks(request, username):
     errormsg = statusmsg = ""
     new_data = {}
     
     u = request.user
     
     # create blank forms
-    sn_form = SocialNetworkSettingsForm(u)
-    im_form = InstantMessengerSettingsForm(u)
-    w_form = WebsiteSettingsForm(u)
+    sn_form = SocialNetworkSettingsForm()
+    im_form = InstantMessengerSettingsForm()
+    w_form = WebsiteSettingsForm()
 
     if request.method == 'POST':
         new_data = request.POST.copy()
         form_name = new_data['form_name']
         if form_name == 'sn_form':
-            sn_form = SocialNetworkSettingsForm(u, new_data)
+            sn_form = SocialNetworkSettingsForm(new_data)
             if sn_form.is_valid():
-                sn_form.save(new_data)
-                sn_form = SocialNetworkSettingsForm(u) # new form
+                profile = SocialNetworkProfile(user=request.user, network_id=sn_form.cleaned_data['network_id'], username=sn_form.cleaned_data['username'])
+                profile.save()
+                sn_form = SocialNetworkSettingsForm() # new form
                 statusmsg = "Your social network profile settings were successfully updated!"
             else:
                 errormsg = "Please correct the errors below."
         elif form_name == 'im_form':
-            im_form = InstantMessengerSettingsForm(u, new_data)
+            im_form = InstantMessengerSettingsForm(new_data)
             if im_form.is_valid():
-                im_form.save(new_data)
-                im_form = InstantMessengerSettingsForm(u) # new form
+                profile = InstantMessengerProfile(user=request.user, messenger_id=im_form.cleaned_data['messenger_id'], username=im_form.cleaned_data['username'])
+                profile.save()
+                im_form = InstantMessengerSettingsForm() # new form
                 statusmsg = "Your instant messenger profile settings were successfully updated!"
             else:
                 errormsg = "Please correct the errors below."
         elif form_name == 'w_form':
-            w_form = WebsiteSettingsForm(u, new_data)
+            w_form = WebsiteSettingsForm(new_data)
             if w_form.is_valid():
-                w_form.save(new_data)
-                w_form = WebsiteSettingsForm(u) # new form
+                profile = WebsiteProfile(user=request.user, name=w_form.cleaned_data['name'], url=w_form.cleaned_data['url'])
+                profile.save()
+                w_form = WebsiteSettingsForm() # new form
                 statusmsg = "Your website profile settings were successfully updated!"
             else:
                 errormsg = "Please correct the errors below."

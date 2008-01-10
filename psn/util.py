@@ -78,6 +78,46 @@ NETWORK_URLS = {
     'zooomr':'http://www.zooomr.com/photos/%s',
 }
 
+NETWORK_IDENTIFIERS = (
+    ('43things', 'Username'),
+    ('bebo', 'Member ID'),
+    ('catster', 'Cat ID'),
+    ('delicious', 'Username'),
+    ('digg', 'Username'),
+    ('dodgeball', 'User ID'),
+    ('dogster', 'Dog ID'),
+    ('dopplr', 'Username'),
+    ('facebook', 'User ID'),
+    ('flickr', 'Flickr Alias'),
+    ('gamercard', 'Gamertag'),
+    ('goodreads', 'User ID'),
+    ('hi5', 'User ID'),
+    ('jaiku', 'Username'),
+    ('lastfm', 'Username'),
+    ('linkedin', 'Full Name (without spaces)'),
+    ('lj', 'Username'),
+    ('mog', 'Username'),
+    ('multiply', 'Username'),
+    ('myspace', 'Username'),
+    ('newsvine', 'Username'),
+    ('ning', 'Network Name'),
+    ('orkut', 'User ID'),
+    ('pandora', 'Username'),
+    ('pownce', 'Username'),
+    ('reddit', 'Username'),
+    ('sonicliving', 'User ID'),
+    ('stumbleupon', 'Username'),
+    ('tabblo', 'Username'),
+    ('tagworld', 'Username'),
+    ('technorati', 'Username'),
+    ('tribe', 'Username'),
+    ('twitter', 'Username'),
+    ('upcoming', 'User ID'),
+    ('vox', 'Username'),
+    ('youtube', 'Username'),
+    ('zooomr', 'Username'),
+)
+
 MESSENGER_IDS = (
     ('aim', 'AIM'),
     ('msn', 'MSN Messenger'),
@@ -85,7 +125,6 @@ MESSENGER_IDS = (
     ('gtalk', 'GTalk'),
     ('icq', 'ICQ'),
     ('skype', 'Skype'),
-    ('jabber', 'Jabber'),
 )
 
 MESSENGER_URLS = {
@@ -104,5 +143,4 @@ MESSENGER_NAMES = {
     'gtalk': 'GTalk',
     'icq': 'ICQ',
     'skype': 'Skype',
-    'jabber': 'Jabber',
 }
