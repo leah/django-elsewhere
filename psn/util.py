@@ -9,7 +9,7 @@ NETWORK_IDS = (
     ('dopplr', 'Dopplr'),
     ('facebook', 'Facebook'),
     ('flickr', 'Flickr'),
-    ('gamercard', 'Xbox 360 Gamer Card'),
+    ('gamercard', 'Gamer Card'),
     ('goodreads', 'GoodReads'),
     ('hi5', 'Hi5'),
     ('jaiku', 'Jaiku'),
