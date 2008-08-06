@@ -3,11 +3,12 @@ from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
+from django.contrib import admin
 
 from psn.util import *
     
 class SocialNetworkProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('social_network_profiles'), raw_id_admin=True)
+    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('social_network_profiles'))
     network_id = models.CharField(max_length=16, choices=NETWORK_IDS, db_index=True)
     username = models.CharField(max_length=64)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
@@ -34,11 +35,12 @@ class SocialNetworkProfile(models.Model):
             return None
     profile_url = property(_get_profile_url)
     
-    class Admin:
-        pass
+class SocialNetworkProfileAdmin(admin.ModelAdmin):
+    raw_id_fields = ('user',)
+admin.site.register(SocialNetworkProfile, SocialNetworkProfileAdmin)
 
 class InstantMessengerProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('instant_messenger_profiles'), raw_id_admin=True)
+    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('instant_messenger_profiles'))
     messenger_id = models.CharField(max_length=16, choices=MESSENGER_IDS, db_index=True)
     username = models.CharField(max_length=64)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
@@ -73,11 +75,12 @@ class InstantMessengerProfile(models.Model):
             return None
     messenger_url = property(_get_messenger_url)
 
-    class Admin:
-        pass
+class InstantMessengerProfileAdmin(admin.ModelAdmin):
+    raw_id_fields = ('user',)
+admin.site.register(InstantMessengerProfile, InstantMessengerProfileAdmin)
         
 class WebsiteProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('website_profiles'), raw_id_admin=True)        
+    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('website_profiles'))
     name = models.CharField(max_length=64)
     url = models.URLField(verify_exists=True)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
@@ -92,5 +95,6 @@ class WebsiteProfile(models.Model):
         return self.name
     profile_name = property(_get_website_name)
     
-    class Admin:
-        pass
+class WebsiteProfileAdmin(admin.ModelAdmin):
+    raw_id_fields = ('user',)
+admin.site.register(WebsiteProfile, WebsiteProfileAdmin)

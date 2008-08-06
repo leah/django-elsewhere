@@ -1,4 +1,4 @@
-from django import newforms as forms
+from django import forms
 
 from psn.models import *
 from psn.util import NETWORK_IDS, MESSENGER_IDS
