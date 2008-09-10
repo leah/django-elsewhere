@@ -1,16 +1,14 @@
 from django.utils import simplejson
 
-'''
-    PortableProfile
-    
+class PortableProfile(object):
+    '''
     Represents a person's profile as defined by the elsewhere_info file.
     This data can be used to recognized claimed and/or verified identities
     and recognize user relationships based on inbound and outbound edges.
     
     To generate a JSON response, create a view which creates a PortableProfile
     with user data and returns the get_json string for that profile.
-'''
-class PortableProfile(object):
+    '''
     user = None
     node_id = None
     node_ident = ''

@@ -2,13 +2,13 @@ from datetime import datetime
 
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
 
 from psn.util import *
     
 class SocialNetworkProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('social_network_profiles'))
+    user = models.ForeignKey(User, db_index=True, related_name='social_network_profiles')
     network_id = models.CharField(max_length=16, choices=NETWORK_IDS, db_index=True)
     username = models.CharField(max_length=64)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
@@ -40,7 +40,7 @@ class SocialNetworkProfileAdmin(admin.ModelAdmin):
 admin.site.register(SocialNetworkProfile, SocialNetworkProfileAdmin)
 
 class InstantMessengerProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('instant_messenger_profiles'))
+    user = models.ForeignKey(User, db_index=True, related_name='instant_messenger_profiles')
     messenger_id = models.CharField(max_length=16, choices=MESSENGER_IDS, db_index=True)
     username = models.CharField(max_length=64)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
@@ -80,7 +80,7 @@ class InstantMessengerProfileAdmin(admin.ModelAdmin):
 admin.site.register(InstantMessengerProfile, InstantMessengerProfileAdmin)
         
 class WebsiteProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=False, db_index=True, related_name=_('website_profiles'))
+    user = models.ForeignKey(User, db_index=True, related_name='website_profiles')
     name = models.CharField(max_length=64)
     url = models.URLField(verify_exists=True)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)

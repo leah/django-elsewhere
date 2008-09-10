@@ -17,20 +17,16 @@ def social_networks(request):
     
     if request.method == 'POST':
         # delete a profile
-        new_data = request.POST.copy()
-        try:
-            form_name = new_data['form_name']
-            delete_id = new_data['delete_id']
-            if form_name == 'delete_sn_form':
-                profile = u.social_network_profiles.get(id=delete_id)
-            if form_name == 'delete_im_form':
-                profile = u.instant_messenger_profiles.get(id=delete_id)
-            if form_name == 'delete_w_form':
-                profile = u.website_profiles.get(id=delete_id)
-            statusmsg = u"%s Deleted!" % profile.profile_name
-            profile.delete()
-        except:
-            pass
+        form_name = request.POST['form_name']
+        delete_id = request.POST['delete_id']
+        if form_name == 'delete_sn_form':
+            profile = u.social_network_profiles.get(id=delete_id)
+        elif form_name == 'delete_im_form':
+            profile = u.instant_messenger_profiles.get(id=delete_id)
+        elif form_name == 'delete_w_form':
+            profile = u.website_profiles.get(id=delete_id)
+        statusmsg = u"%s Deleted!" % profile.profile_name
+        profile.delete()
 
     return render_to_response('psn.html', {
         'social_network_profiles': u.social_network_profiles.all(),
