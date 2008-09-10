@@ -34,10 +34,7 @@ class SocialNetworkProfile(models.Model):
         except:
             return None
     profile_url = property(_get_profile_url)
-    
-class SocialNetworkProfileAdmin(admin.ModelAdmin):
-    raw_id_fields = ('user',)
-admin.site.register(SocialNetworkProfile, SocialNetworkProfileAdmin)
+
 
 class InstantMessengerProfile(models.Model):
     user = models.ForeignKey(User, db_index=True, related_name='instant_messenger_profiles')
@@ -75,9 +72,6 @@ class InstantMessengerProfile(models.Model):
             return None
     messenger_url = property(_get_messenger_url)
 
-class InstantMessengerProfileAdmin(admin.ModelAdmin):
-    raw_id_fields = ('user',)
-admin.site.register(InstantMessengerProfile, InstantMessengerProfileAdmin)
         
 class WebsiteProfile(models.Model):
     user = models.ForeignKey(User, db_index=True, related_name='website_profiles')
@@ -94,7 +88,3 @@ class WebsiteProfile(models.Model):
     def _get_website_name(self):
         return self.name
     profile_name = property(_get_website_name)
-    
-class WebsiteProfileAdmin(admin.ModelAdmin):
-    raw_id_fields = ('user',)
-admin.site.register(WebsiteProfile, WebsiteProfileAdmin)
