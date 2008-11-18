@@ -37,7 +37,7 @@ def social_networks(request):
 
 # portable social networks settings page
 @login_required
-def settings_social_networks(request, username):
+def settings_social_networks(request):
     errormsg = statusmsg = ""
     new_data = {}
     
