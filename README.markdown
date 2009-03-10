@@ -1,48 +1,47 @@
-Portable Social Networks for Django
+django-elsewhere - Portable Social Networks for Django
 ===================================
 
-django-psn - Portable Social Networks for Django
-_Leah Culver (leahculver.com)_
-_Please send feedback to leah@sixapart.com_
+* [Leah Culver] (http://leahculver.com)
+* [Chris Drackett] (http://chrisdrackett.com/)
+* Please send feedback to leah@sixapart.com
 
-Django-PSN provides users of a social website to provide and display information about their 
+Django-elsewhere allows users of a social website to provide and display information about their 
 other online social networks. The project was created to let Pownce users 
 show their friends what other online social networks they participate in. 
-The hyperlinks to other profiles make use of the XFN rel="me" standard (http://www.gmpg.org/xfn/), 
+The hyperlinks to other profiles make use of the XFN rel="me" standard [http://www.gmpg.org/xfn/] (http://www.gmpg.org/xfn/), 
 which enables auto-discovery of social network profiles which the user has chosen to consolidate 
-into a single identity. Hopefully it's also parsable by Plaxo's Online Identity Consolidator (http://www.plaxo.com/info/opensocialgraph).
+into a single identity. Hopefully it's also parsable by Plaxo's Online Identity Consolidator [http://www.plaxo.com/info/opensocialgraph] (http://www.plaxo.com/info/opensocialgraph).
 
-In addition, Django-PSN provides a JSON response with the user's claimed URLs and friend/fan relationships 
+In addition, Django-elsewhere provides a JSON response with the user's claimed URLs and friend/follower relationships 
 (represented as user ids for graph edges in and edges out). An example can be found at /interface/elsewhere_info 
 with params id=user_id or indent=username.
 
 I copied this format from LiveJournal, guessing that it will be copied by other websites as well. 
-I'm open to changing this format and updating Django-PSN accordingly. This data can 
+I'm open to changing this format and updating Django-elsewhere accordingly. This data can 
 be used to connect friends across online social networks, building a free social graph.
 
 Dependencies:
 ------------
 
-* Django development version (Djang-PSN is now tracking the Django Trunk.)
-* Django Auth Module, place 'django.contrib.auth' in INSTALLED_APPS setting
+* Django 1.0
+* Django Contrib Auth, place 'django.contrib.auth' in INSTALLED_APPS setting
 
 
-To use psn:
+To use elsewhere:
 -----------
 
-1. Rename django-psn 'psn'.
-2. Make sure the 'psn' folder is available on your python path.
-3. Add 'psn' to your INSTALLED_APPS setting.
-4. To create the necessary database tables, run the command: python manage.py syncdb
+1. Place the /elsewhere directory on your Python path.
+2. Add 'elsewhere' to your INSTALLED_APPS setting.
+4. To create the necessary database tables, from your project run the command: python manage.py syncdb
 
 To use the sample views:
 ------------------------
 Add the following to your urlconf:
 
-	(r'^social_networks/$', 'psn.views.social_networks'),
-	(r'^settings/social_networks/$', 'psn.views.settings_social_networks'),
+	(r'^social_networks/$', 'elsewhere.views.social_networks'),
+	(r'^settings/social_networks/$', 'elsewhere.views.settings_social_networks'),
 
-For sample templates add the path to psn/templates to your TEMPLATE_DIRS setting.
+For sample templates add the path to elsewhere/templates to your TEMPLATE_DIRS setting.
 
 About the models:
 -----------------
@@ -70,9 +69,9 @@ and profile data on their application profiles for their friends.
 Generate elsewhere_info JSON:
 Add the following to your urlconf:
 
-	(r'^interface/elsewhere_info/$', 'psn.views.elsewhere_info'),
+	(r'^interface/elsewhere_info/$', 'elsewhere.views.elsewhere_info'),
 
-Customize the elsewhere_info view in psn/views.py. Specifically, you will need to 
+Customize the elsewhere_info view in elsewhere/views.py. Specifically, you will need to 
 generate lists of edges in and edges out based on how your application handles friend relationships.
 		
 Expected Request for elsewhere_info
@@ -125,9 +124,10 @@ Expected Response for elsewhere_info
 Other resources:
 ----------------
 
-* Thoughts on the Social Graph (http://bradfitz.com/social-graph-problem/) - Brad Fitzpatrick and David Recordon
-* Microformats Social Network Portability (http://microformats.org/wiki/social-network-portability) - from the Microformats wiki
-* XHTML Friends Network (http://www.gmpg.org/xfn/)
-* Building Blocks for Portable Social Networks (http://www.brianoberkirch.com/2007/08/08/building-blocks-for-portable-social-networks/) - Brian Oberkirch
-* Following Friends Across Walled Gardens (http://www.personalinfocloud.com/2006/11/following_frien.html) - Thomas Vander Wal
-* Open Social Graph @ Plaxo (http://www.plaxo.com/info/opensocialgraph) - identity consolidation tools
+* [Portable Social Networks for Django] (http://leahculver.com/2007/09/03/portable-social-networks-for-django/) - Leah Culver
+* [Thoughts on the Social Graph] (http://bradfitz.com/social-graph-problem/) - Brad Fitzpatrick and David Recordon
+* [Microformats Social Network Portability] (http://microformats.org/wiki/social-network-portability) - from the Microformats wiki
+* [XHTML Friends Network] (http://www.gmpg.org/xfn/)
+* [Building Blocks for Portable Social Networks] (http://www.brianoberkirch.com/2007/08/08/building-blocks-for-portable-social-networks/) - Brian Oberkirch
+* [Following Friends Across Walled Gardens] (http://www.personalinfocloud.com/2006/11/following_frien.html) - Thomas Vander Wal
+* [Open Social Graph @ Plaxo] (http://www.plaxo.com/info/opensocialgraph) - identity consolidation tools
