@@ -1,9 +1,16 @@
 django-elsewhere - Portable Social Networks for Django
 ===================================
 
+Formerly Django-PSN.
+
+Authors:
+------------
 * [Leah Culver] (http://leahculver.com)
 * [Chris Drackett] (http://chrisdrackett.com/)
 * Please send feedback to leah@sixapart.com
+
+About:
+------------
 
 Django-elsewhere allows users of a social website to provide and display information about their 
 other online social networks. The project was created to let Pownce users 
