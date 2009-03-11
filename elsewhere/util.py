@@ -1,5 +1,5 @@
 NETWORK_IDS = (
-    ('43things', '43Things'),
+    ('43things', '43 Things'),
     ('bebo', 'Bebo'),
     ('blip', 'Blip.tv'),
     ('catster', 'Catster'),
