@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
 
-from psn.util import *
+from util import *
     
 class SocialNetworkProfile(models.Model):
     user = models.ForeignKey(User, db_index=True, related_name='social_network_profiles')

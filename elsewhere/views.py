@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 
-from psn.elsewhere import PortableProfile
-from psn.models import *
-from psn.forms import *
+from elsewhere import PortableProfile
+from models import *
+from forms import *
 
 # portable social networks
 @login_required
@@ -115,7 +115,7 @@ def elsewhere_info(request):
             want_edges = False
     except:
         pass
-    
+
     if want_edges:
         # Provide custom code here to set the edges in / edges out for your
         # site's friend relationships
@@ -124,7 +124,7 @@ def elsewhere_info(request):
         
         edges_out = []
         profile.edges_out = edges_out
-    
+
     # return the profile data as JSON
     json = profile.get_json(want_edges)
     return HttpResponse(json)
