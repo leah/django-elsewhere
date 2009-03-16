@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 
-from elsewhere import PortableProfile
-from models import *
-from forms import *
+from elsewhere.profile import PortableProfile
+from elsewhere.models import *
+from elsewhere.forms import *
 
 # portable social networks
 @login_required

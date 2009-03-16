@@ -1,7 +1,7 @@
 from django import forms
 
-from models import *
-from util import NETWORK_IDS, MESSENGER_IDS
+from elsewhere.models import *
+from elsewhere.util import NETWORK_IDS, MESSENGER_IDS
 
 class SocialNetworkSettingsForm(forms.Form):
     form_name = forms.CharField(widget=forms.HiddenInput(), initial='sn_form')
