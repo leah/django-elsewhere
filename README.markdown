@@ -45,8 +45,7 @@ To use the sample views:
 ------------------------
 Add the following to your urlconf:
 
-	(r'^social_networks/$', 'elsewhere.views.social_networks'),
-	(r'^settings/social_networks/$', 'elsewhere.views.settings_social_networks'),
+	(r'^elsewhere/', include('elsewhere.urls'))
 
 For sample templates add the path to elsewhere/templates to your TEMPLATE_DIRS setting.
 
