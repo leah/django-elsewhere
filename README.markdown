@@ -1,7 +1,7 @@
-django-elsewhere - Portable Social Networks for Django
+django-elsewhere - Social Network Links for Django
 ===================================
 
-Formerly Django-PSN.
+Formerly Django-PSN (Portable Social Networks) and originally created for Pownce.
 
 Authors:
 ------------
@@ -23,20 +23,13 @@ A quick shortcut is to checkout the project directly into your Python path:
 About:
 ------------
 
-Django-elsewhere allows users of a social website to provide and display information about their 
+Django-elsewhere allows users of a website to provide and display information about their 
 other online social networks. The project was created to let Pownce users 
 show their friends what other online social networks they participate in. 
 The hyperlinks to other profiles make use of the XFN rel="me" standard [http://www.gmpg.org/xfn/] (http://www.gmpg.org/xfn/), 
 which enables auto-discovery of social network profiles which the user has chosen to consolidate 
-into a single identity. Hopefully it's also parsable by Plaxo's Online Identity Consolidator [http://www.plaxo.com/info/opensocialgraph] (http://www.plaxo.com/info/opensocialgraph).
+into a single identity.
 
-In addition, Django-elsewhere provides a JSON response with the user's claimed URLs and friend/follower relationships 
-(represented as user ids for graph edges in and edges out). An example can be found at /interface/elsewhere_info 
-with params id=user_id or indent=username.
-
-I copied this format from LiveJournal, guessing that it will be copied by other websites as well. 
-I'm open to changing this format and updating Django-elsewhere accordingly. This data can 
-be used to connect friends across online social networks, building a free social graph.
 
 Dependencies:
 ------------
@@ -44,13 +37,6 @@ Dependencies:
 * Django 1.0
 * Django Contrib Auth, place 'django.contrib.auth' in INSTALLED_APPS setting
 
-
-To use elsewhere:
------------
-
-1. Place the /elsewhere directory on your Python path.
-2. Add 'elsewhere' to your INSTALLED_APPS setting.
-4. To create the necessary database tables, from your project run the command: python manage.py syncdb
 
 To use the sample views:
 ------------------------
@@ -60,83 +46,18 @@ Add the following to your urlconf:
 
 For sample templates add the path to elsewhere/templates to your TEMPLATE_DIRS setting.
 
+
 About the models:
 -----------------
 
-There are two chunks of information considered interesting to social network portability:
-		
-Edges In and Edges Out - These define 'friend' relationships between users.
-Claimed and Verified URLs - Assertions of a user's identity in other social networks.
-		
-Edges In and Out is application specific but fairly easy data to obtain for a site owner.
-		
-Identity URL assertions can be obtained through a GUI which can be mutually interesting to 
-users and interesting to data collectors. Daniel Burka (Pownce designer) and I spent a lot of time thinking of how to gather these 
-assertions from users. We decided that while online identities take one form to a data collector 
-(a profile URL), users perceive online identity in three forms:
+For Django-elsewhere, the online profiles have been divided into three categories:
 
 * Social Networks (online social site profiles)
-* Instant Messengers (screenname)
+* Instant Messengers (screennames)
 * Websites (can be used for other types of online profiles such as weblogs or OpenID providers)
 
-We really wanted Pownce users to get immediate positive feedback for providing Pownce with their online identities. 
-Pownce users are not only contributing to social graph data, but are also displaying links 
-and profile data on their application profiles for their friends.
+You can create and edit these either in the Django admin or using Django forms.
 
-Generate elsewhere_info JSON:
-Add the following to your urlconf:
-
-	(r'^interface/elsewhere_info/$', 'elsewhere.views.elsewhere_info'),
-
-Customize the elsewhere_info view in elsewhere/views.py. Specifically, you will need to 
-generate lists of edges in and edges out based on how your application handles friend relationships.
-		
-Expected Request for elsewhere_info
-		
-Given a numeric node id or node identifier, return JSON about the
-user, optionally with all related edges.
-
-GET /interface/elsewhere_info?id=234234		# unique userid
-GET /interface/elsewhere_info?ident=brad	# unique identifier (username / group name)
-Host: www.elsewhere-cooperating-site.com
-
-arguments:
-id=			 # integer nodeid to query.	 this or 'ident' is required.
-ident=		 # string identifier to query.	this or 'id' is required.
-want_edges=1	 # optional: explicitly request/don't request edges_{in,out} (default whatever you want)
-
-Expected Response for elsewhere_info
-
-	HTTP 200 OK
-	Content-Type: text/json		 # server isn't picky; can be whatever
-
-	{
-	"node_id": 239847283947,
-	"node_ident": "brad",
-	"node_type": {"person"|"group"|"openid"},
-	"mbox_sha1sum": "f1d2d2f924e986ac86fdf7b36c94bcdf32beec15",	 # of "mailto:email@foo.com", ONLY IF email is verified
-
-	"claimed_urls": [
-	 "mbox_sha1sum:f1d2d2f924e986ac86fdf7b36c94bcdf32beec15", # if not verified.
-	 "http://facebook.com/profile?id=23423434",
-	 "aim:bradfitzpatrick",
-	 "http://bradfitz.com/",
-	],
-
-	"verified_urls": [	 # ONLY if proven with OpenID / facebook auth, etc...
-	 "http://facebook.com/profile?id=23423434",
-	}
-
-	"edges_out" : [	 # all edges out, whether dest nodes are people _or_ groups.
-	  1,
-	  2,
-	  5,
-	  10,
-	],
-	"edges_in":[   # all edges out, whether source nodes are people _or_ groups.
-	  8,
-	],
-	};
 
 Other resources:
 ----------------
