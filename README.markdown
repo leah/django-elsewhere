@@ -9,6 +9,17 @@ Authors:
 * [Chris Drackett] (http://chrisdrackett.com/)
 * Please send feedback to leah@sixapart.com
 
+
+Install:
+------------
+
+You can get the source directly from GitHub either by downloading the project or checking out the repository.
+
+A quick shortcut is to checkout the project directly into your Python path:
+
+	git clone git://github.com/leah/django-elsewhere.git elsewhere
+
+
 About:
 ------------
 
