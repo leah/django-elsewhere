@@ -11,11 +11,6 @@ from elsewhere.forms import *
 
 @login_required
 def example(request):
-    
-    # create blank forms
-    sn_form = SocialNetworkSettingsForm()
-    im_form = InstantMessengerSettingsForm()
-    w_form = WebsiteSettingsForm()
 
     if request.method == 'POST':
         new_data = request.POST.copy()
@@ -52,6 +47,11 @@ def example(request):
         # WTF?
         else:
             return HttpResponseServerError
+    else:
+        # Create blank forms
+        sn_form = SocialNetworkSettingsForm()
+        im_form = InstantMessengerSettingsForm()
+        w_form = WebsiteSettingsForm()
 
     return render_to_response('elsewhere/example.html', {
         'sn_form': sn_form, 'im_form': im_form, 'w_form': w_form,
