@@ -29,6 +29,7 @@ def example(request):
                 profile.save()
                 return HttpResponseRedirect(request.path)
             else:
+                ## TODO should probably show the errors
                 print form.errors
 
         # Delete forms
