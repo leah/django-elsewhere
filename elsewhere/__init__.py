@@ -420,10 +420,11 @@ INSTANT_MESSENGERS = [
 
 
 class ProfileManager:
-
+    """ Handle raw data for lists of profiles."""
     data = {}
 
     def _get_choices(self):
+        """ List of choices for profile select fields. """
         return [(props['id'], props['name']) for props in self.data]
     choices = property(_get_choices)
 
