@@ -72,6 +72,47 @@ For Django-elsewhere, the online profiles have been divided into three categorie
 You can create and edit these either in the Django admin or using Django forms.
 
 
+Using a different list of profiles:
+------------------------
+
+You can define your own list of available social networks and instant messengers by adding SOCIAL_NETWORKS
+and/or INSTANT_MESSENGERS lists to your settings:
+
+    SOCIAL_NETWORKS = [
+        {
+            'id': 'facebook',
+            'name': 'Facebook',
+            'url': 'http://www.facebook.com/profile.php?id=%s',
+            'itentifier': 'User ID',
+            'icon': 'facebook.png',
+        },
+        {
+            'id': 'myspace',
+            'name': 'MySpace',
+            'url': 'http://www.myspace.com/%s',
+            'itentifier': 'Username',
+            'icon': 'myspace.png',
+        },
+    ]
+
+    INSTANT_MESSENGERS = [
+        {
+            'id': 'aim',
+            'name': 'AIM',
+            'url': 'aim:goim?screenname=%s',
+            'icon': 'aim.png',
+        },
+        {
+            'id': 'yahoo',
+            'name': 'Y!',
+            'url': 'ymsgr:sendim?%s',
+            'icon': 'yahoo.png',
+        },
+    ]
+
+If no SOCIAL_NETWORKS or INSTANT_MESSENGERS are defined in your project settings, django-elsewhere will
+default to using the lists in fatty_lists.py.
+
 Other resources:
 ----------------
 
