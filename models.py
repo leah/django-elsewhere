@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django import forms
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
@@ -65,6 +66,13 @@ class SocialNetworkProfile(models.Model, Profile):
     data_item = property(get_data_item)
 
 
+class SocialNetworkForm(forms.ModelForm):
+
+    class Meta:
+        model = SocialNetworkProfile
+        fields = ('network_id', 'username')
+
+
 class InstantMessengerProfile(models.Model, Profile):
 
     data_manager = im_manager
@@ -84,6 +92,13 @@ class InstantMessengerProfile(models.Model, Profile):
     data_item = property(get_data_item)
 
 
+class InstantMessengerForm(forms.ModelForm):
+
+    class Meta:
+        model = InstantMessengerProfile
+        fields = ('messenger_id', 'username')
+
+
 class WebsiteProfile(models.Model):
     user = models.ForeignKey(User, db_index=True, related_name='website_profiles')
     name = models.CharField(max_length=64)
@@ -99,3 +114,10 @@ class WebsiteProfile(models.Model):
         # No known icons! Just return the Google service URL.
         return GOOGLE_PROFILE_URL % self.url
     icon = property(_get_icon)
+
+
+class WebsiteForm(forms.ModelForm):
+
+    class Meta:
+        model = WebsiteProfile
+        fields = ('name', 'url')
