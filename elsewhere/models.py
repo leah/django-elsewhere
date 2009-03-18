@@ -3,6 +3,7 @@ from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
 from django.contrib import admin
 
 from elsewhere.util import *
@@ -34,6 +35,14 @@ class SocialNetworkProfile(models.Model):
         except:
             return None
     profile_url = property(_get_profile_url)
+
+    def _get_icon_name(self):
+        return '%s.png' % self.network_id
+    icon_name = property(_get_icon_name)
+
+    def _get_icon(self):
+        return reverse('elsewhere_img', args=[self.icon_name])
+    icon = property(_get_icon)
 
 
 class InstantMessengerProfile(models.Model):
@@ -72,7 +81,15 @@ class InstantMessengerProfile(models.Model):
             return None
     messenger_url = property(_get_messenger_url)
 
-        
+    def _get_icon_name(self):
+        return '%s.png' % self.messenger_id
+    icon_name = property(_get_icon_name)
+
+    def _get_icon(self):
+        return reverse('elsewhere_img', args=[self.icon_name])
+    icon = property(_get_icon)
+
+
 class WebsiteProfile(models.Model):
     user = models.ForeignKey(User, db_index=True, related_name='website_profiles')
     name = models.CharField(max_length=64)
@@ -88,3 +105,7 @@ class WebsiteProfile(models.Model):
     def _get_website_name(self):
         return self.name
     profile_name = property(_get_website_name)
+
+    def _get_icon(self):
+        return 'http://www.google.com/s2/favicons?domain_url=%s' % self.url
+    icon = property(_get_icon)

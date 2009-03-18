@@ -40,11 +40,24 @@ Dependencies:
 
 To use the sample views:
 ------------------------
+
 Add the following to your urlconf:
 
 	(r'^elsewhere/', include('elsewhere.urls'))
 
 For sample templates add the path to elsewhere/templates to your TEMPLATE_DIRS setting.
+
+
+To use the icons:
+------------------------
+
+Each profile object has an icon property that will render the icon while in DEBUG mode.
+Just use:
+
+    {{ profile.icon }}
+
+To enable the icons in production, you'll need to point your webserver to the icon directory.
+The default path to an icon is like: /elsewhere/img/vox.png
 
 
 About the models:
