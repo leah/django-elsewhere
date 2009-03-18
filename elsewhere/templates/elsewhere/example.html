@@ -14,8 +14,8 @@
     <ul>
     {% for profile in request.user.social_network_profiles.all %}
         <li>
-            <img src="{{ profile.icon }}" alt="{{ profile.network_id }}"/>
-            <a href="{{ profile.profile_url }}" rel="me">{{ profile.profile_name }}</a>
+            <img src="{{ profile.icon }}" alt="{{ profile.name }}"/>
+            <a href="{{ profile.url }}" rel="me">{{ profile.name }}</a>
             <form id="delete-network-{{ profile.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_sn_form">
                 <input type="submit" value="Delete" class="button">
@@ -41,8 +41,8 @@
     <ul>
     {% for profile in request.user.instant_messenger_profiles.all %}
         <li>
-            <img src="{{ profile.icon }}" alt="{{ profile.messenger_id }}"/>
-            {{ profile.profile_name }}: <a href="{{ profile.messenger_url }}">{{ profile.username }}</a>
+            <img src="{{ profile.icon }}" alt="{{ profile.name }}"/>
+            {{ profile.name }}: <a href="{{ profile.url }}">{{ profile.username }}</a>
             <form id="delete-messenger-{{ profile.id }}" method="post" action=".">
                 <input type="hidden" name="form_name" value="delete_im_form">
                 <input type="submit" value="Delete" class="button">

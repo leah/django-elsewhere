@@ -6,11 +6,47 @@ from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.contrib import admin
 
-from elsewhere.util import *
-    
-class SocialNetworkProfile(models.Model):
+from elsewhere import sn_manager, im_manager
+
+GOOGLE_PROFILE_URL = 'http://www.google.com/s2/favicons?domain_url=%s'
+
+
+class Profile:
+
+    data_manager = None
+
+    def _get_data_item(self):
+        for network in self.data_manager.data:
+            if network['id'] == self.network_id:
+                return network
+        return None
+    data_item = property(_get_data_item)
+
+    def _get_name(self):
+        return self.data_item['name']
+    name = property(_get_name)
+
+    def _get_icon_name(self):
+        return self.data_item['icon']
+    icon_name = property(_get_icon_name)
+
+    def _get_url(self):
+        return self.data_item['url'] % self.username
+    url = property(_get_url)
+
+    def _get_icon(self):
+        if self.icon_name:
+            return reverse('elsewhere_img', args=[self.icon_name])
+        return GOOGLE_PROFILE_URL % self.url
+    icon = property(_get_icon)
+
+
+class SocialNetworkProfile(models.Model, Profile):
+
+    data_manager = sn_manager
+
     user = models.ForeignKey(User, db_index=True, related_name='social_network_profiles')
-    network_id = models.CharField(max_length=16, choices=NETWORK_IDS, db_index=True)
+    network_id = models.CharField(max_length=16, choices=data_manager.choices, db_index=True)
     username = models.CharField(max_length=64)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_verified = models.DateTimeField(_('date verified'), default=datetime.now)
@@ -18,76 +54,21 @@ class SocialNetworkProfile(models.Model):
     
     def __unicode__(self):
         return self.network_id
-        
-    # get the display name for a social network
-    def _get_network_name(self):
-        for k,v in NETWORK_IDS:
-            if k == self.network_id:
-                return v
-        else:
-            return None
-    profile_name = property(_get_network_name)
-
-    # get the url for a social network with the username/id inserted
-    def _get_profile_url(self):
-        try:
-            return NETWORK_URLS[self.network_id] % str(self.username)
-        except:
-            return None
-    profile_url = property(_get_profile_url)
-
-    def _get_icon_name(self):
-        return '%s.png' % self.network_id
-    icon_name = property(_get_icon_name)
-
-    def _get_icon(self):
-        return reverse('elsewhere_img', args=[self.icon_name])
-    icon = property(_get_icon)
 
 
-class InstantMessengerProfile(models.Model):
+class InstantMessengerProfile(models.Model, Profile):
+
+    data_manager = im_manager
+
     user = models.ForeignKey(User, db_index=True, related_name='instant_messenger_profiles')
-    messenger_id = models.CharField(max_length=16, choices=MESSENGER_IDS, db_index=True)
+    messenger_id = models.CharField(max_length=16, choices=data_manager.choices, db_index=True)
     username = models.CharField(max_length=64)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_verified = models.DateTimeField(_('date verified'), default=datetime.now)
     is_verified = models.BooleanField(default=False)
-    
+
     def __unicode__(self):
         return self.username
-    
-    # get the long name for an IM service
-    def _get_full_messenger_name(self):
-        for k,v in MESSENGER_IDS:
-            if k == self.messenger_id:
-                return v
-        else:
-            return None
-    full_messenger_name = property(_get_full_messenger_name)
-    
-    # get the display name for an IM service
-    def _get_messenger_name(self):
-        try:
-            return MESSENGER_NAMES[self.messenger_id]
-        except:
-            return None
-    profile_name = property(_get_messenger_name)
-
-    # get the url to start a chat with the username/id provided
-    def _get_messenger_url(self):
-        try:
-            return MESSENGER_URLS[self.messenger_id] % str(self.username)
-        except:
-            return None
-    messenger_url = property(_get_messenger_url)
-
-    def _get_icon_name(self):
-        return '%s.png' % self.messenger_id
-    icon_name = property(_get_icon_name)
-
-    def _get_icon(self):
-        return reverse('elsewhere_img', args=[self.icon_name])
-    icon = property(_get_icon)
 
 
 class WebsiteProfile(models.Model):
@@ -97,15 +78,10 @@ class WebsiteProfile(models.Model):
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     date_verified = models.DateTimeField(_('date verified'), default=datetime.now)
     is_verified = models.BooleanField(default=False)
-    
+
     def __unicode__(self):
         return self.url
 
-    # get the display name for a website
-    def _get_website_name(self):
-        return self.name
-    profile_name = property(_get_website_name)
-
     def _get_icon(self):
-        return 'http://www.google.com/s2/favicons?domain_url=%s' % self.url
+        return GOOGLE_PROFILE_URL % self.url
     icon = property(_get_icon)
