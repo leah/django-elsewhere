@@ -91,6 +91,13 @@ SOCIAL_NETWORKS = [
         'icon': 'flickr.png',
     },
     {
+        'id': 'foursquare',
+        'name': 'foursquare',
+        'url': 'http://playfoursquare.com/user?uid=%s',
+        'itentifier': 'User ID',
+        'icon': 'foursquare.png',
+    },
+    {
         'id': 'gamercard',
         'name': 'Gamer Card',
         'url': 'http://live.xbox.com/en-US/profile/profile.aspx?pp=0&GamerTag=%s',
@@ -245,6 +252,13 @@ SOCIAL_NETWORKS = [
         'icon': 'pownce.png',
     },
     {
+        'id': 'readernaut',
+        'name': 'Readernaut',
+        'url': 'http://readernaut.com/%s/',
+        'itentifier': 'Username',
+        'icon': 'readernaut.png',
+    },
+    {
         'id': 'rb',
         'name': 'RedBubble',
         'url': 'http://www.redbubble.com/people/%s/',
@@ -264,6 +278,13 @@ SOCIAL_NETWORKS = [
         'url': 'http://seesmic.com/%s/',
         'itentifier': 'Username',
         'icon': 'seesmic.png',
+    },
+    {
+        'id': 'shelfworthy',
+        'name': 'Shelfworthy',
+        'url': 'http://shelfworthy.com/%s/',
+        'itentifier': 'Username',
+        'icon': 'shelfworthy.png',
     },
     {
         'id': 'sonicliving',
