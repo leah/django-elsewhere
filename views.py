@@ -8,7 +8,6 @@ from elsewhere.models import *
 
 @login_required
 def example(request):
-
     if request.method == 'POST':
 
         new_data = request.POST.copy()

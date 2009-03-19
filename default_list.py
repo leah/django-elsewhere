@@ -1,440 +1,440 @@
-SOCIAL_NETWORKS = [
+default_social_networks = [
     {
-        'id': '43things',
         'name': '43 Things',
         'url': 'http://www.43things.com/person/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'fortythreethings.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'bebo',
         'name': 'Bebo',
         'url': 'http://www.bebo.com/Profile.jsp?MemberId=%s',
-        'itentifier': 'Member ID',
+        'identifier': 'Member ID',
         'icon': 'bebo.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'blip',
         'name': 'Blip.tv',
         'url': 'http://%s.blip.tv/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'blip.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'catster',
         'name': 'Catster',
         'url': 'http://www.catster.com/cats/%s',
-        'itentifier': 'Cat ID',
+        'identifier': 'Cat ID',
         'icon': 'catster.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'corkd',
         'name': 'Corkd',
         'url': 'http://corkd.com/people/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'corkd.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'delicious',
         'name': 'Delicious',
         'url': 'http://delicious.com/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'delicious.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'digg',
         'name': 'Digg',
         'url': 'http://digg.com/users/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'digg.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'djangopeople',
         'name': 'Django People',
         'url': 'http://djangopeople.net/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'djangopeople.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'dodgeball',
         'name': 'Dodgeball',
         'url': 'http://www.dodgeball.com/user?uid=%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'dodgeball.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'dogster',
         'name': 'Dogster',
         'url': 'http://www.dogster.com/dogs/%s',
-        'itentifier': 'Dog ID',
+        'identifier': 'Dog ID',
         'icon': 'dogster.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'dopplr',
         'name': 'Dopplr',
         'url': 'http://www.dopplr.com/traveller/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'dopplr.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'facebook',
         'name': 'Facebook',
         'url': 'http://www.facebook.com/profile.php?id=%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'facebook.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'flickr',
         'name': 'Flickr',
         'url': 'http://flickr.com/photos/%s/',
-        'itentifier': 'Flickr Alias',
+        'identifier': 'Flickr Alias',
         'icon': 'flickr.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'foursquare',
         'name': 'foursquare',
         'url': 'http://playfoursquare.com/user?uid=%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'foursquare.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'gamercard',
         'name': 'Gamer Card',
         'url': 'http://live.xbox.com/en-US/profile/profile.aspx?pp=0&GamerTag=%s',
-        'itentifier': 'Gamertag',
+        'identifier': 'Gamertag',
         'icon': 'gamercard.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'github',
         'name': 'GitHub',
         'url': 'http://github.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'github.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'goodreads',
         'name': 'GoodReads',
         'url': 'http://www.goodreads.com/user/show/%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'goodreads.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'hi5',
         'name': 'Hi5',
         'url': 'http://hi5.com/friend/profile/displayProfile.do?userid=%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'hi5.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'instructables',
         'name': 'Instructables',
         'url': 'http://www.instructables.com/member/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'instructables.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'jaiku',
         'name': 'Jaiku',
         'url': 'http://%s.jaiku.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'jaiku.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'lastfm',
         'name': 'Last.fm',
         'url': 'http://www.last.fm/user/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'lastfm.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'librarything',
         'name': 'LibraryThing',
         'url': 'http://www.librarything.com/profile/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'librarything.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'linkedin',
         'name': 'LinkedIn',
         'url': 'http://www.linkedin.com/in/%s',
-        'itentifier': 'Full Name (without spaces)',
+        'identifier': 'Full Name (without spaces)',
         'icon': 'linkedin.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'lj',
         'name': 'LiveJournal',
         'url': 'http://%s.livejournal.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'lj.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'magnolia',
         'name': 'Ma.gnolia',
         'url': 'http://ma.gnolia.com/people/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'magnolia.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'metafilter',
         'name': 'MetaFilter',
         'url': 'http://www.metafilter.com/user/%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'metafilter.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'mog',
         'name': 'MOG',
         'url': 'http://mog.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'mog.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'multiply',
         'name': 'Multiply',
         'url': 'http://%s.multiply.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'multiply.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'myspace',
         'name': 'MySpace',
         'url': 'http://www.myspace.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'myspace.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'netvibes',
         'name': 'Netvibes',
         'url': 'http://www.netvibes.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'netvibes.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'newsvine',
         'name': 'Newsvine',
         'url': 'http://%s.newsvine.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'newsvine.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'ning',
         'name': 'Ning',
         'url': 'http://%s.ning.com/',
-        'itentifier': 'Network Name',
+        'identifier': 'Network Name',
         'icon': 'ning.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'orkut',
         'name': 'Orkut',
         'url': 'http://www.orkut.com/Profile.aspx?uid=%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'orkut.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'pandora',
         'name': 'Pandora',
         'url': 'http://pandora.com/people/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'pandora.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'plaxo',
         'name': 'Plaxo',
         'url': 'http://%s.myplaxo.com/',
-        'itentifier': 'Public Profile ID',
+        'identifier': 'Public Profile ID',
         'icon': 'plaxo.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'pownce',
         'name': 'Pownce',
         'url': 'http://pownce.com/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'pownce.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'readernaut',
         'name': 'Readernaut',
         'url': 'http://readernaut.com/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'readernaut.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'rb',
         'name': 'RedBubble',
         'url': 'http://www.redbubble.com/people/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'redbubble.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'reddit',
         'name': 'Reddit',
         'url': 'http://reddit.com/user/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'reddit.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'seesmic',
         'name': 'Seesmic',
         'url': 'http://seesmic.com/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'seesmic.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'shelfworthy',
         'name': 'Shelfworthy',
         'url': 'http://shelfworthy.com/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'shelfworthy.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'sonicliving',
         'name': 'SonicLiving',
         'url': 'http://www.sonicliving.com/user/%s/',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'sonicliving.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'stumbleupon',
         'name': 'StumbleUpon',
         'url': 'http://%s.stumbleupon.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'stumbleupon.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'tabblo',
         'name': 'Tabblo',
         'url': 'http://www.tabblo.com/studio/person/%s/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'tabblo.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'tagworld',
         'name': 'TagWorld',
         'url': 'http://www.tagworld.com/%s',
-        'itentifier': 'Username',
-        'icon': None,
+        'identifier': 'Username',
+        'icon': '',
+        'network_type': 'sn'
     },
     {
-        'id': 'technorati',
         'name': 'Technorati',
         'url': 'http://technorati.com/people/technorati/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'technorati.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'tribe',
         'name': 'Tribe',
         'url': 'http://people.tribe.net/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'tribe.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'tumblr',
         'name': 'Tumblr',
         'url': 'http://%s.tumblr.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'tumblr.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'twitter',
         'name': 'Twitter',
         'url': 'http://twitter.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'twitter.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'upcoming',
         'name': 'Upcoming',
         'url': 'http://upcoming.yahoo.com/user/%s',
-        'itentifier': 'User ID',
+        'identifier': 'User ID',
         'icon': 'upcoming.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'ustream',
         'name': 'Ustream.TV',
         'url': 'http://www.ustream.tv/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'ustream.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'virb',
         'name': 'Virb',
         'url': 'http://www.virb.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'virb.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'vox',
         'name': 'Vox',
         'url': 'http://%s.vox.com/',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'vox.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'wakoopa',
         'name': 'Wakoopa',
         'url': 'http://wakoopa.com/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'wakoopa.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'youtube',
         'name': 'YouTube',
         'url': 'http://www.youtube.com/user/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'youtube.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'zooomr',
         'name': 'Zooomr',
         'url': 'http://www.zooomr.com/photos/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'zooomr.png',
+        'network_type': 'sn'
     },
     {
-        'id': 'zune',
         'name': 'Zune',
         'url': 'http://social.zune.net/member/%s',
-        'itentifier': 'Username',
+        'identifier': 'Username',
         'icon': 'zune.png',
+        'network_type': 'sn'
     },
 ]
 
-INSTANT_MESSENGERS = [
+default_im_networks = [
     {
-        'id': 'aim',
         'name': 'AIM',
         'url': 'aim:goim?screenname=%s',
         'icon': 'aim.png',
+        'network_type': 'im'
     },
     {
-        'id': 'gtalk',
         'name': 'GTalk',
         'url': 'gtalk:chat?jid=%s',
         'icon': 'gtalk.png',
+        'network_type': 'im'
     },
     {
-        'id': 'icq',
         'name': 'ICQ',
         'url': 'http://www.icq.com/people/about_me.php?to=%s',
         'icon': 'icq.png',
+        'network_type': 'im'
     },
     {
-        'id': 'msn',
         'name': 'MSN',
         'url': 'msnim:chat?contact=%s',
         'icon': 'msn.png',
+        'network_type': 'im'
     },
     {
-        'id': 'skype',
         'name': 'Skype',
         'url': 'skype:%s?chat',
         'icon': 'skype.png',
+        'network_type': 'im'
     },
     {
-        'id': 'yahoo',
         'name': 'Y!',
         'url': 'ymsgr:sendim?%s',
         'icon': 'yahoo.png',
+        'network_type': 'im'
     },
 ]

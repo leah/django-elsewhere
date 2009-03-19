@@ -83,14 +83,14 @@ and/or INSTANT_MESSENGERS lists to your settings:
             'id': 'facebook',
             'name': 'Facebook',
             'url': 'http://www.facebook.com/profile.php?id=%s',
-            'itentifier': 'User ID',
+            'identifier': 'User ID',
             'icon': 'facebook.png',
         },
         {
             'id': 'myspace',
             'name': 'MySpace',
             'url': 'http://www.myspace.com/%s',
-            'itentifier': 'Username',
+            'identifier': 'Username',
             'icon': 'myspace.png',
         },
     ]
