@@ -14,7 +14,7 @@
     <ul>
     {% for profile in request.user.social_network_profiles.all %}
         <li>
-            <img src="{{ profile.icon }}" alt="{{ profile.name }}"/>
+            <img src="{{ profile.icon }}" alt="{{ profile.name }}">
             <a href="{{ profile.url }}" rel="me">{{ profile.name }}</a>
             <form id="delete-network-{{ profile.id }}" method="post" action=".">
                 <input type="hidden" name="delete_id" value="{{ profile.id }}">
@@ -33,14 +33,14 @@
     <p><input type="submit" name="sn-form" value="Add Social Network" class="button"></p>
 </form>
 
-<br/>
+<br>
 
 <h2>Instant Messengers</h2>
 {% if request.user.instant_messenger_profiles.all %}
     <ul>
     {% for profile in request.user.instant_messenger_profiles.all %}
         <li>
-            <img src="{{ profile.icon }}" alt="{{ profile.name }}"/>
+            <img src="{{ profile.icon }}" alt="{{ profile.name }}">
             {{ profile.name }}: <a href="{{ profile.url }}">{{ profile.username }}</a>
             <form id="delete-messenger-{{ profile.id }}" method="post" action=".">
                 <input type="hidden" name="delete_id" value="{{ profile.id }}">
@@ -59,14 +59,14 @@
     <p><input type="submit" name="im-form" value="Add Instant Messenger" class="button"></p>
 </form>
 
-<br/>
+<br>
 
 <h2>Websites</h2>
 {% if request.user.website_profiles.all %}
     <ul>
     {% for profile in request.user.website_profiles.all %}
         <li>
-            <img src="{{ profile.icon }}" alt="{{ profile.name }}"/>
+            <img src="{{ profile.icon }}" alt="{{ profile.name }}">
             <a href="{{ profile.url }}" rel="me">{{ profile.name }}</a>
             <form id="delete-website-{{ profile.id }}" method="post" action=".">
                 <input type="hidden" name="delete_id" value="{{ profile.id }}">
