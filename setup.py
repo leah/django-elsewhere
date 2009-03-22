@@ -8,4 +8,5 @@ setup(name='django-elsewhere',
       author='Leah Culver',
       author_email='leah@sixapart.com',
       url='http://github.com/leah/django-elsewhere/tree/master',
+      packages=['elsewhere'],
       )
