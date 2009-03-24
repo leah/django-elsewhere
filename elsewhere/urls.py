@@ -4,7 +4,7 @@ import os
 from django.conf.urls.defaults import *
 from django.contrib import admin
 
-from elsewhere.functions import fill_db
+from functions import fill_db
 
 admin.autodiscover()
 
