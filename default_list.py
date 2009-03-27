@@ -1,7 +1,7 @@
 default_social_networks = [
     {
         'name': '43 Things',
-        'url': 'http://www.43things.com/person/%s/',
+        'url': 'http://www.43things.com/person/%s',
         'identifier': 'Username',
         'icon': 'fortythreethings.png',
         'network_type': 'sn'
@@ -15,7 +15,7 @@ default_social_networks = [
     },
     {
         'name': 'Blip.tv',
-        'url': 'http://%s.blip.tv/',
+        'url': 'http://%s.blip.tv',
         'identifier': 'Username',
         'icon': 'blip.png',
         'network_type': 'sn'
@@ -36,21 +36,21 @@ default_social_networks = [
     },
     {
         'name': 'Delicious',
-        'url': 'http://delicious.com/%s/',
+        'url': 'http://delicious.com/%s',
         'identifier': 'Username',
         'icon': 'delicious.png',
         'network_type': 'sn'
     },
     {
         'name': 'Digg',
-        'url': 'http://digg.com/users/%s/',
+        'url': 'http://digg.com/users/%s',
         'identifier': 'Username',
         'icon': 'digg.png',
         'network_type': 'sn'
     },
     {
         'name': 'Django People',
-        'url': 'http://djangopeople.net/%s/',
+        'url': 'http://djangopeople.net/%s',
         'identifier': 'Username',
         'icon': 'djangopeople.png',
         'network_type': 'sn'
@@ -71,7 +71,7 @@ default_social_networks = [
     },
     {
         'name': 'Dopplr',
-        'url': 'http://www.dopplr.com/traveller/%s/',
+        'url': 'http://www.dopplr.com/traveller/%s',
         'identifier': 'Username',
         'icon': 'dopplr.png',
         'network_type': 'sn'
@@ -85,7 +85,7 @@ default_social_networks = [
     },
     {
         'name': 'Flickr',
-        'url': 'http://flickr.com/photos/%s/',
+        'url': 'http://www.flickr.com/photos/%s',
         'identifier': 'Flickr Alias',
         'icon': 'flickr.png',
         'network_type': 'sn'
@@ -134,14 +134,14 @@ default_social_networks = [
     },
     {
         'name': 'Jaiku',
-        'url': 'http://%s.jaiku.com/',
+        'url': 'http://%s.jaiku.com',
         'identifier': 'Username',
         'icon': 'jaiku.png',
         'network_type': 'sn'
     },
     {
         'name': 'Last.fm',
-        'url': 'http://www.last.fm/user/%s/',
+        'url': 'http://www.last.fm/user/%s',
         'identifier': 'Username',
         'icon': 'lastfm.png',
         'network_type': 'sn'
@@ -162,7 +162,7 @@ default_social_networks = [
     },
     {
         'name': 'LiveJournal',
-        'url': 'http://%s.livejournal.com/',
+        'url': 'http://%s.livejournal.com',
         'identifier': 'Username',
         'icon': 'lj.png',
         'network_type': 'sn'
@@ -190,7 +190,7 @@ default_social_networks = [
     },
     {
         'name': 'Multiply',
-        'url': 'http://%s.multiply.com/',
+        'url': 'http://%s.multiply.com',
         'identifier': 'Username',
         'icon': 'multiply.png',
         'network_type': 'sn'
@@ -211,14 +211,14 @@ default_social_networks = [
     },
     {
         'name': 'Newsvine',
-        'url': 'http://%s.newsvine.com/',
+        'url': 'http://%s.newsvine.com',
         'identifier': 'Username',
         'icon': 'newsvine.png',
         'network_type': 'sn'
     },
     {
         'name': 'Ning',
-        'url': 'http://%s.ning.com/',
+        'url': 'http://%s.ning.com',
         'identifier': 'Network Name',
         'icon': 'ning.png',
         'network_type': 'sn'
@@ -239,70 +239,70 @@ default_social_networks = [
     },
     {
         'name': 'Plaxo',
-        'url': 'http://%s.myplaxo.com/',
+        'url': 'http://%s.myplaxo.com',
         'identifier': 'Public Profile ID',
         'icon': 'plaxo.png',
         'network_type': 'sn'
     },
     {
         'name': 'Pownce',
-        'url': 'http://pownce.com/%s/',
+        'url': 'http://pownce.com/%s',
         'identifier': 'Username',
         'icon': 'pownce.png',
         'network_type': 'sn'
     },
     {
         'name': 'Readernaut',
-        'url': 'http://readernaut.com/%s/',
+        'url': 'http://readernaut.com/%s',
         'identifier': 'Username',
         'icon': 'readernaut.png',
         'network_type': 'sn'
     },
     {
         'name': 'RedBubble',
-        'url': 'http://www.redbubble.com/people/%s/',
+        'url': 'http://www.redbubble.com/people/%s',
         'identifier': 'Username',
         'icon': 'redbubble.png',
         'network_type': 'sn'
     },
     {
         'name': 'Reddit',
-        'url': 'http://reddit.com/user/%s/',
+        'url': 'http://reddit.com/user/%s',
         'identifier': 'Username',
         'icon': 'reddit.png',
         'network_type': 'sn'
     },
     {
         'name': 'Seesmic',
-        'url': 'http://seesmic.com/%s/',
+        'url': 'http://seesmic.com/%s',
         'identifier': 'Username',
         'icon': 'seesmic.png',
         'network_type': 'sn'
     },
     {
         'name': 'Shelfworthy',
-        'url': 'http://shelfworthy.com/%s/',
+        'url': 'http://shelfworthy.com/%s',
         'identifier': 'Username',
         'icon': 'shelfworthy.png',
         'network_type': 'sn'
     },
     {
         'name': 'SonicLiving',
-        'url': 'http://www.sonicliving.com/user/%s/',
+        'url': 'http://www.sonicliving.com/user/%s',
         'identifier': 'User ID',
         'icon': 'sonicliving.png',
         'network_type': 'sn'
     },
     {
         'name': 'StumbleUpon',
-        'url': 'http://%s.stumbleupon.com/',
+        'url': 'http://%s.stumbleupon.com',
         'identifier': 'Username',
         'icon': 'stumbleupon.png',
         'network_type': 'sn'
     },
     {
         'name': 'Tabblo',
-        'url': 'http://www.tabblo.com/studio/person/%s/',
+        'url': 'http://www.tabblo.com/studio/person/%s',
         'identifier': 'Username',
         'icon': 'tabblo.png',
         'network_type': 'sn'
@@ -330,7 +330,7 @@ default_social_networks = [
     },
     {
         'name': 'Tumblr',
-        'url': 'http://%s.tumblr.com/',
+        'url': 'http://%s.tumblr.com',
         'identifier': 'Username',
         'icon': 'tumblr.png',
         'network_type': 'sn'
@@ -365,7 +365,7 @@ default_social_networks = [
     },
     {
         'name': 'Vox',
-        'url': 'http://%s.vox.com/',
+        'url': 'http://%s.vox.com',
         'identifier': 'Username',
         'icon': 'vox.png',
         'network_type': 'sn'

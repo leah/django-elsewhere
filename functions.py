@@ -1,7 +1,7 @@
 from default_list import *
 from elsewhere.models import SocialNetwork, InstantMessenger
 
-# this function will fill the database with default data (stored in fatty_lists.py)
+# this function will fill the database with default data (stored in default_list.py)
 
 def fill_db():
     '''This is a function so it doesn't get called automatically on import; 
