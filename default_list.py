@@ -85,7 +85,7 @@ default_social_networks = [
     },
     {
         'name': 'Flickr',
-        'url': 'http://www.flickr.com/photos/%s',
+        'url': 'http://www.flickr.com/photos/%s/',
         'identifier': 'Flickr Alias',
         'icon': 'flickr.png',
         'network_type': 'sn'
