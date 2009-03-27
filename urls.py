@@ -4,7 +4,7 @@ import os
 from django.conf.urls.defaults import *
 from django.contrib import admin
 
-from functions import fill_db
+from elsewhere.functions import fill_db
 
 admin.autodiscover()
 
@@ -23,5 +23,4 @@ if settings.DEBUG:
     )
 
 # fill the database if it hasn't been filled already
-print "filling DB"
 fill_db()
