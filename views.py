@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 
-from models import *
+from elsewhere.models import *
 
 
 @login_required

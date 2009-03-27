@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from models import *
+from elsewhere.models import *
 
 class ProfileAdmin(admin.ModelAdmin):
     raw_id_fields = ['user']
