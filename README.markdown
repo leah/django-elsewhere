@@ -13,12 +13,13 @@ Authors:
 Install:
 ------------
 
-You can get the source directly from GitHub either by downloading the project or checking out the repository.
+1. You can get the source directly from GitHub either by downloading the project or checking out the repository: 'git clone git://github.com/leah/django-elsewhere.git'
 
-A quick shortcut is to checkout the project directly into your Python path:
+2. After checking the project out, add the 'elsewhere' directory to your Python path.
 
-	git clone git://github.com/leah/django-elsewhere.git elsewhere
+3. Once the project is on your python path, add 'elsewhere' to your INSTALLED_APPS in settings.py.
 
+4. run python manage.py syncdb from within your project to add the elsewhere database tables and initial data.
 
 About:
 ------------
