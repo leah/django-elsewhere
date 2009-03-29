@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-from elsewhere.models import *
+from models import *
 
 class ProfileAdmin(admin.ModelAdmin):
     raw_id_fields = ['user']
 
 class SocialNetworkProfileAdmin(ProfileAdmin):
-    list_display = ('user', 'network', 'username') #, 'date_added')
+    list_display = ('user', 'network_id', 'username') #, 'date_added')
 
 class InstantMessengerProfileAdmin(ProfileAdmin):
-    list_display = ('user', 'network', 'username') #, 'date_added')
+    list_display = ('user', 'network_id', 'username') #, 'date_added')
 
 class WebsiteProfileAdmin(ProfileAdmin):
     list_display = ('user', 'name', 'url') #, 'date_added')

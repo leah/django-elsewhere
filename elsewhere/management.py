@@ -1,13 +1,11 @@
-from default_list import *
+from django.db.models import signals
+
+from elsewhere.default_list import *
 from elsewhere.models import SocialNetwork, InstantMessenger
 
-# this function will fill the database with default data (stored in default_list.py)
+# this function will fill the database with default data (stored in default_lists.py)
 
-def fill_db():
-    '''This is a function so it doesn't get called automatically on import; 
-    instead it's called at the end of urls.py, but could potentially be called
-    from anywhere that gets read in only once.'''
-
+def fill_db(sender=None, **kwargs):
     for item in default_social_networks: # fill social networks
         if item.has_key('identifier'):
             ident = item['identifier']
@@ -31,3 +29,5 @@ def fill_db():
             'identifier': ident,
             'icon': item['icon']
         })
+
+signals.post_syncdb.connect(fill_db)
